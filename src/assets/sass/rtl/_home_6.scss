@@ -1,0 +1,80 @@
+.hero-6 .hero-slider:after {
+    background-image: linear-gradient(108deg, rgba(3, 18, 29, 0.8) 40.47%, rgba(0, 1, 2, 0.8) 48.71%, rgba(0, 1, 2, 0) 66.42%, rgba(0, 1, 2, 0) 66.42%);
+    transform: rotateY(180deg);
+}
+.hero-6 .slick-dots li {
+    margin: 15px 0;
+}
+.about-thumb6 {
+    padding-left: 50px;
+    padding-right: 0;
+    .about-img-2 {
+        left: 0;
+        right: auto;
+    }
+    .about-counter-wrap {
+        right: -60px;
+        left: auto;
+    }
+    @include xl {
+        .about-counter-wrap {
+            right: -10px;
+        }
+    }
+    @include xs {
+        padding-left: 0;
+    }
+}
+.process-area-4 .process-4-thumb {
+    left: 0;
+    right: auto;
+    transform: rotateY(180deg);
+}
+.project-card.style5 .project-card-details {
+    border: 0;
+    border-radius: 0;
+}
+.donation-area-3 {
+    .donation-slider3 {
+        margin-left: -360px;
+        margin-right: 0;
+    }
+    @include md {
+        .donation-slider3 {
+            margin-left: -12px;
+        }
+    }
+}
+.team-card.style6 .team-card-content {
+    right: 0;
+    left: auto;
+}
+.blog-grid .blog-content {
+    padding: 0 30px 0 0;
+    @include sm {
+        padding: 30px 0 0;
+    }
+}
+.footer-layout4 .footer-top .info-card:not(:first-child) {
+    border-right: 1px solid rgba(75, 175, 71, 0.1882352941);
+    border-left: 0;
+    padding-right: 100px;
+    padding-left: 0;
+}
+@include lg {
+    .contact-area-3 {
+        background-position: right;
+    }
+    .footer-layout4 .footer-top .info-card:not(:first-child) {
+        padding-right: 60px;
+    }
+}
+@include md {
+    .footer-layout4 .footer-top .info-card:not(:first-child) {
+        border-right: 0;
+        padding-right: 0;
+    }
+}
+.footer-layout4 .copyright-wrap .footer-links ul li {
+    border-color: transparent;
+}

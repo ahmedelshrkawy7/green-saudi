@@ -1,0 +1,84 @@
+.subscribe-area-1 {
+    padding: 50px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 3;
+    .subscribe-wrap {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        .icon {
+            font-size: 100px;
+            color: #fffFFF66;
+        }
+        .subscribe-wrap-title {
+            color: $white-color;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .subscribe-wrap-text {
+            color: $white-color;
+            margin-bottom: -0.4em;
+        }
+    }
+    .newsletter-form {
+        .form-group {
+            background: $white-color;
+            border-radius: 50px;
+            margin-bottom: 0;
+            input {
+                border: 0;
+                padding: 0 150px 0 30px;
+                color: $body-color;
+                height: 64px;
+                &::placeholder {
+                    color: $body-color;
+                }
+            }
+        }
+        .btn {
+            right: 5px;
+            top: 5px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 800;
+            height: 54px;
+            padding: 0 30px;
+        }
+    }
+}
+@include md {
+    .subscribe-area-1 .newsletter-form {
+        width: 100%;
+    }
+}
+@include sm {
+    .subscribe-area-1 .subscribe-wrap {
+        flex-wrap: wrap;
+        gap: 20px;
+        text-align: center;
+        justify-content: center;
+    }
+    .subscribe-area-1 .newsletter-form .btn {
+        position: relative;
+        width: 100%;
+        margin-top: 15px;
+        right: 0;
+        top: 0;
+        justify-content: center;
+    }
+    .subscribe-area-1 .newsletter-form .form-group input {
+        padding: 0 30px;
+        height: 54px;
+    }
+}
+@include xs {
+    .subscribe-area-1 {
+        padding: 40px;
+    }
+}
+@include vxs {
+    .subscribe-area-1 {
+        padding: 30px;
+    }
+}

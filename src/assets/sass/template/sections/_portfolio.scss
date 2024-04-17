@@ -1,0 +1,379 @@
+/* project card ---------------------------------- */
+.project-tab-btn {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    .btn {
+        width: 100%;
+        background: $smoke-color2;
+        border-radius: 30px;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 800;
+        color: $title-color;
+        padding: 17.5px 30px;
+        &:after {
+            background: $theme-color;
+        }
+        &.active {
+            background: $theme-color;
+            color: $white-color;
+        }
+        &:hover {
+            color: $white-color;
+        }
+    }
+    @include lg {
+        justify-content: center;
+        .btn {
+            min-width: 200px;
+            width: auto;
+        }
+    }
+}
+.project-card {
+    position: relative;
+    .project-card-img {
+        img {
+            height: 420px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+    }
+    .project-card-details {
+        background: $white-color;
+        position: absolute;
+        bottom: 20px;
+        border-left: 5px solid $theme-color;
+        padding: 25px 30px;
+        border-radius: 0 15px 15px 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.4s;
+        width: 96%;
+    }
+    .project-card-subtitle {
+        margin-bottom: 8px;
+        a {
+            color: $body-color;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+    .project-card-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 0;
+        a {
+            color: $title-color;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+    &:hover {
+        .project-card-details {
+            opacity: 1;
+            visibility: visible;
+            width: 86%;
+        }
+    }
+}
+
+/* project card 02---------------------------------- */
+.project-tab-btn.style2 {
+    justify-content: center;
+    margin-bottom: 55px;
+    .btn {
+        display: inline-block;
+        width: auto;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 8px 30px;
+        margin-top: 0;
+    }
+}
+.project-card.style2 {
+    .project-card-img img {
+        height: auto;
+    }
+}
+
+/* project card 03---------------------------------- */
+.project-area-4 {
+    .project-wrap {
+        display: flex;
+        gap: 40px;
+        .filter-active-cat1 {
+            width: 100%;
+        }
+    }
+    @include md {
+        .project-wrap {
+            display: block;
+            .filter-active-cat1 {
+                width: auto;
+            }
+        }
+    }
+}
+.project-tab-btn.style3 {
+    max-width: 125px;
+    align-content: flex-start;
+    button {
+        height: 125px;
+        width: 125px;
+        img {
+            height: 125px;
+            width: 125px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+        border: 0;
+        padding: 0;
+        background: transparent;
+    }
+    @include md {
+        margin-bottom: 40px;
+        max-width: none;
+    }
+}
+.project-card.style3 {
+    background: $smoke-color;
+    padding: 53px 60px 53px;
+    border-radius: 15px;
+    .project-card-details {
+        position: initial;
+        width: auto;
+        opacity: 1;
+        visibility: visible;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        margin-right: 30px;
+    }
+    .project-card-title {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+    .btn {
+        margin-top: 16px;
+    }
+    .project-card-img {
+        img {
+            max-height: 400px;
+            height: 308px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    }
+    @include lg {
+        padding: 43px 40px 43px;
+        .project-card-details {
+            margin-right: 0;
+        }
+        .project-card-title {
+            margin-bottom: 14px;
+        }
+    }
+    @include xs {
+        padding: 30px;
+    }
+}
+/* project card 04---------------------------------- */
+.project-card.style4 {
+    .project-card-img img {
+        height: 450px;
+        border-radius: 5px;
+    }
+    .project-card-details {
+        border: 0;
+        border-radius: 5px;
+        width: -webkit-fill-available;
+        margin: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px;
+        transform: translate(0, 100%);
+        flex-wrap: wrap;
+        gap: 20px;
+        .icon-btn {
+            border-radius: 0;
+            flex: none;
+        }
+        .project-card-title {
+            font-size: 20px;
+            margin-bottom: 5px;
+            margin-top: -0.3em;
+        }
+        .project-card-subtitle {
+            font-weight: 500;
+            margin-bottom: -0.5em;
+        }
+    }
+    &:hover {
+        .project-card-details {
+            transform: translate(0, 0);
+        }
+    }
+}
+
+/* project card 05---------------------------------- */
+.project-card.style5 {
+    .project-card-img img {
+        height: 410px;
+        border-radius: 0;
+    }
+    .project-card-details {
+        inset: 0px;
+        border: 0;
+        border-radius: 0;
+        background: rgba(75, 175, 71, 0.75);
+        width: auto;
+        display: flex;
+        align-items: center;
+        padding: 35px;
+        transition: 0.4s;
+        .media {
+            transform: scale(0);
+            transition: 0.4s;
+        }
+    }
+    .project-card-subtitle {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        a {
+            color: $white-color;
+            &:hover {
+                color: $title-color;
+            }
+        }
+    }
+    .project-card-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+        a {
+            color: $white-color;
+            &:hover {
+                color: $title-color;
+            }
+        }
+    }
+    .icon-btn {
+        border-radius: 50%;
+        background: $white-color;
+        color: $theme-color;
+        &:hover {
+            color: $white-color;
+            background: $title-color;
+        }
+    }
+    &:hover {
+        .project-card-details {
+            inset: 30px;
+            .media {
+                transform: scale(1);
+            }
+        }
+    }
+    @include vxs {
+        .project-card-details {
+            padding: 30px;
+        }
+    }
+}
+
+/* project card 07---------------------------------- */
+.project-area-7 {
+    .project-card.style4 {
+        border-radius: 20px;
+        overflow: hidden;
+        .project-card-img {
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                inset: 0px;
+                transition: 0.4s;
+                opacity: 0;
+                border-radius: 20px;
+                background: linear-gradient(8deg,#4baf47 8.74%,rgba(75,175,71,0) 75.79%);
+            }
+        }
+        .project-card-img img {
+            border-radius: 20px;
+        }
+        .project-card-details {
+            background: $title-color;
+            border-radius: 10px;
+            .icon-btn {
+                border-radius: 10px;
+                background: $white-color;
+                color: $title-color;
+                &:hover {
+                    background: $theme-color;
+                    color: $white-color;
+                }
+            }
+        }
+        .project-card-subtitle a,
+        .project-card-title a {
+            color: $white-color;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+        &:hover {
+            .project-card-img {
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+/* project details---------------------------------- */
+.project-page-single {
+    .page-img {
+        margin-right: 30px;
+        img {
+            border-radius: 15px;
+            width: 100%;
+        }
+        @include lg {
+            margin-right: 0;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            width: 49%;
+            display: inline-block;
+            margin-bottom: 40px;
+            border-left: 1px solid $border-color;
+            padding-left: 30px;
+            span {
+                font-weight: 500;
+            }
+            .portfolio-name {
+                font-size: 18px;
+                font-weight: 700;
+                margin-top: 6px;
+                margin-bottom: 0;
+            }
+        }
+        @include vxs {
+            li {
+                padding-left: 0;
+                border-left: 0;
+            }
+        }
+    }
+}

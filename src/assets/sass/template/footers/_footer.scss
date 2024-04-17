@@ -1,0 +1,400 @@
+.footer-wrapper {
+    background: rgba(255, 244, 239, 0.7);
+}
+.copyright-wrap {
+    padding: 15.5px 0;
+    border-top: 1px solid #454441;
+    .footer-links {
+        ul {
+            padding: 0;
+            margin: 0;
+            li {
+                list-style: none;
+                display: inline-block;
+                border-right: 1px solid $border-color;
+                padding-right: 12px;
+                margin-right: 10px;
+                line-height: normal;
+                &:last-child {
+                    margin-right: 0;
+                    padding-right: 0;
+                    border-right: 0;
+                }
+                a {
+                    color: $border-color;
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+}
+.widget-area {
+    padding: 80px 0 70px;
+}
+.copyright-text {
+    margin: 0;
+    color: $border-color;
+    font-weight: 400;
+    a {
+        color: $white-color;
+        &:hover {
+            color: $theme-color;
+        }
+    }
+}
+.footer-layout1 {
+    position: relative;
+    .footer-top {
+        padding: 120px 0 0px;
+        .info-card {
+            display: flex;
+            padding: 30px 30px 25px;
+            background: $theme-color;
+            border-radius: 20px;
+            gap: 15px;
+            .info-card_icon {
+                height: 55px;
+                width: 55px;
+                line-height: 55px;
+                background: $white-color;
+                color: $theme-color;
+                text-align: center;
+                border-radius: 50%;
+                flex: none
+            }
+            .info-card_title {
+                color: $white-color;
+                font-size: 22px;
+                margin-bottom: 5px;
+            }
+            .info-card_text {
+                color: $white-color;
+                font-weight: 500;
+                margin-bottom: 0;
+                a {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+    .footer-text,
+    .widget-about .about-text {
+        color: $white-color;
+    }
+    .footer-widget .wp-block-search__label, .footer-widget .widget_title {
+        color: $white-color;
+    }
+    .footer-widget.widget_meta a, .footer-widget.widget_pages a, .footer-widget.widget_archive a, .footer-widget.widget_recent_entries a, .footer-widget.widget_categories a, .footer-widget.widget_nav_menu a {
+        color: $white-color;
+        &:hover {
+            color: $theme-color;
+        }
+    }
+    .newsletter-form {
+        margin-top: 27px;
+    }
+}
+@include lg {
+    .footer-layout1 .footer-top .info-card {
+        display: block;
+    }
+    .footer-layout1 .footer-top .info-card .info-card_icon {
+        margin-bottom: 20px;
+    }
+}
+@include md {
+    .footer-layout1 .footer-top {
+        padding: 80px 0 0px;
+    }
+    .widget-area {
+        padding: 80px 0 30px;
+    }
+}
+
+/*Footer area 2--------------------------*/
+.footer-layout2 {
+    .footer-top {
+        padding-top: 80px;
+        border-bottom: 1px solid #b4b3ac;
+        padding-bottom: 60px;
+    }
+    .widget-area {
+        padding: 60px 0 30px;
+    }
+    .copyright-wrap {
+        padding: 20px 0;
+        border: 0;
+        background: $theme-color;
+        .copyright-text {
+            color: $white-color;
+            a {
+                &:hover {
+                    color: $title-color;
+                }
+            }
+        }
+        .footer-links ul li {
+            border-right: 0;
+        }
+        .footer-links ul li a {
+            color: $white-color;
+            &:hover {
+                color: $title-color;
+            }
+        }
+    }
+}
+.footer-contact-wrap {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    .footer-contact-icon {
+        background: #FFF7F4;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
+        text-align: center;
+        flex: none;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            height: 100%;
+            width: 100%;
+            border: 1px solid $theme-color;
+            border-radius: 50%;
+            transition: 0.4s;
+
+        }
+    }
+    .footer-contact-details {
+        .title {
+            font-size: 16px;
+            font-weight: 300;
+            font-family: $body-font;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .footer-contact-link,
+        .footer-contact-text {
+            font-weight: 300;
+            margin-bottom: -0.3em;
+            color: $body-color;
+            display: block;
+            a {
+                color: $body-color;
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+    &:hover {
+        .footer-contact-icon:after {
+            left: 0;
+            top: 0;
+        }
+    }
+}
+@include xs {
+    .footer-contact-wrap .footer-contact-icon:after {
+        left: 0;
+        top: 0;
+    }
+}
+@include vxs {
+    .footer-contact-wrap .footer-contact-icon {
+        height: 80px;
+        width: 80px;
+        line-height: 80px;
+    }
+}
+/*Footer area 3--------------------------*/
+.footer-top3 {
+    position: relative;
+    z-index: 1;
+    padding: 60px 50px;
+    .info-card {
+        display: flex;
+        gap: 25px;
+        .info-card_icon {
+            height: 70px;
+            width: 70px;
+            line-height: 70px;
+            background: $white-color;
+            color: $theme-color;
+            text-align: center;
+            border-radius: 20px;
+            flex: none;
+            font-size: 25px;
+        }
+        .info-card_title {
+            color: $white-color;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .info-card_text {
+            color: $white-color;
+            font-weight: 500;
+            margin-bottom: 0;
+            a {
+                color: $white-color;
+            }
+        }
+    }
+    @include xs {
+        padding: 50px 40px;
+    }
+    @include vxs {
+        padding: 40px 30px;
+        .info-card {
+            flex-wrap: wrap;
+        }
+    }
+}
+.footer-layout3 {
+    --body-color: #fff;
+    background: #363832;
+    .footer-widget .wp-block-search__label, 
+    .footer-widget .widget_title {
+        color: $white-color;
+        font-size: 20px;
+    }
+    .footer-widget.widget_meta a, .footer-widget.widget_pages a, .footer-widget.widget_archive a, .footer-widget.widget_recent_entries a, .footer-widget.widget_categories a, .footer-widget.widget_nav_menu a {
+        font-weight: 400;
+    }
+    .widget-area {
+        padding: 80px 0 30px;
+    }
+    .newsletter-form.style2 .form-group input {
+        &::placeholder {
+            color: #84847C;
+        }
+    }
+    .copyright-wrap {
+        background-color: #1d1c17;
+        border: 0;
+        padding: 30px 0;
+        .footer-links ul li {
+            border: 0 !important;
+        }
+    }
+}
+
+/*Footer area 4--------------------------*/
+.footer-layout4 {
+    background-color: #08090c;
+    --body-color: #ffffff;
+    .newsletter-form.style2 .form-group input {
+        &::placeholder {
+            color: #84847C;
+        }
+    }
+    .footer-top {
+        border-bottom: 1px solid #4baf4730;
+        display: flex;
+        justify-content: space-between;
+        .info-card {
+            display: flex;
+            gap: 20px;
+            padding: 60px 0;
+            &:not(:first-child) {
+                border-left: 1px solid #4baf4730;
+                padding-left: 100px;
+            }
+            .info-card_icon {
+                height: 70px;
+                width: 70px;
+                line-height: 70px;
+                background: $theme-color;
+                color: $white-color;
+                text-align: center;
+                border-radius: 50%;
+                flex: none;
+                font-size: 24px;
+            }
+            .info-card_title {
+                color: $white-color;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            .info-card_text {
+                color: $white-color;
+                font-weight: 500;
+                margin-bottom: 0;
+                a {
+                    color: $white-color;
+                }
+            }
+        }
+        @include xs {
+            padding: 50px 40px;
+        }
+        @include vxs {
+            padding: 40px 30px;
+            .info-card {
+                flex-wrap: wrap;
+            }
+        }
+    }
+    .widget-area {
+        padding: 100px 0 50px;
+    }
+    .widget_title {
+        color: $white-color;
+    }
+    .footer-widget.widget_meta a, .footer-widget.widget_pages a, .footer-widget.widget_archive a, .footer-widget.widget_recent_entries a, .footer-widget.widget_categories a, .footer-widget.widget_nav_menu a {
+        margin-bottom: 22px;
+    }
+    .social-btn.color-theme {
+        gap: 10px;
+        a {
+            --icon-size: 45px;
+            border-radius: 5px;
+            line-height: 45px;
+        }
+    }
+    .copyright-wrap {
+        border-top: 1px solid #4baf4730;
+    }
+    .copyright-wrap .footer-links ul li {
+        border-color: transparent;
+    }
+    @include lg {
+        .footer-top .info-card:not(:first-child) {
+            padding-left: 60px;
+        }
+    }
+    @include md {
+        .footer-top {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 35px 0;
+            .info-card {
+                padding: 15px 0;
+                &:last-child {
+                    margin: auto;
+                }
+            }
+            .info-card:not(:first-child) {
+                border: 0;
+                padding-left: 0;
+            }
+        }
+    }
+    @include sm {
+        .widget-area {
+            padding: 80px 0 30px;
+        }
+    }
+    @include xs {
+        .footer-top .info-card:not(:first-child) {
+            margin: 0;
+        }
+    }
+}

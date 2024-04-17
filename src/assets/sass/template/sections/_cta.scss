@@ -1,0 +1,41 @@
+/*cta area 1--------------*/
+.cta-area-1 {
+    padding: 60px 0;
+}
+/*cta area 3--------------*/
+.cta-area-3 {
+    padding-bottom: 180px;
+}
+/*cta area 4--------------*/
+.cta-wrap4 {
+    position: relative;
+    padding-bottom: 220px;
+    .cta-4-thumb {
+        position: absolute;
+        right: -80px;
+        bottom: 0;
+        top: 0;
+        img {
+            height: 100%;
+        }
+    }
+    @include xl {
+        .cta-4-thumb {
+            right: 0;
+        }
+    }
+    @include lg {
+        .cta-4-thumb {
+            width: 500px;
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+    @include md {
+        padding-bottom: 180px;
+        .cta-4-thumb {
+            display: none;
+        }
+    }
+}
