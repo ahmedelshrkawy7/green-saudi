@@ -1,4 +1,3 @@
-import React from "react";
 
 const Services = () => {
   return (
@@ -9,18 +8,18 @@ const Services = () => {
       <div className="service-area-3 space overflow-hidden bg-smoke">
         <div
           className="leaf-shape-animation3 d-lg-block d-none"
-          data-bg-src="assets/img/service/service-shape2-1.svg"
+          data-bg-src="./src/assets/img/service/service-shape2-1.svg"
         ></div>
         <div
           className="service-shape1_2 shape-mockup jump-reverse d-lg-block d-none"
           data-top="0"
           data-left="0"
         >
-          <img src="assets/img/service/service-shape1-2.png" alt="img" />
+          <img src="./src/assets/img/service/service-shape1-2.png" alt="img" />
         </div>
         <div
           className="leaf-shape-animation"
-          data-bg-src="assets/img/icon/leaf.svg"
+          data-bg-src="./src/assets/img/icon/leaf.svg"
         ></div>
         <div className="container container2">
           <div className="row justify-content-center">
@@ -37,7 +36,7 @@ const Services = () => {
             <div className="col-xl-4 col-md-6">
               <div className="service-card style3">
                 <div className="service-card-img">
-                  <img src="assets/img/service/service_3-1.jpg" alt="img" />
+                  <img src="./src/assets/img/service/service_3-1.webp" alt="img" />
                 </div>
                 <div className="service-card_icon">
                   <svg
@@ -75,7 +74,7 @@ const Services = () => {
             <div className="col-xl-4 col-md-6">
               <div className="service-card style3">
                 <div className="service-card-img">
-                  <img src="assets/img/service/service_3-2.jpg" alt="img" />
+                  <img src="./src/assets/img/service/service_3-2.webp" alt="img" />
                 </div>
                 <div className="service-card_icon">
                   <svg
@@ -113,7 +112,7 @@ const Services = () => {
             <div className="col-xl-4 col-md-6">
               <div className="service-card style3">
                 <div className="service-card-img">
-                  <img src="assets/img/service/service_3-3.jpg" alt="img" />
+                  <img src="./src/assets/img/service/service_3-3.webp" alt="img" />
                 </div>
                 <div className="service-card_icon">
                   <svg

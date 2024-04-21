@@ -62,7 +62,7 @@ Header Area
                   <nav className="main-menu d-none d-lg-inline-block">
                     <ul>
                       <li className="menu-item-has-children">
-                        <a title="New Demo" href="#">
+                        <a  href="#">
                           Home
                         </a>
                         <ul className="sub-menu">
@@ -196,7 +196,7 @@ Header Area
                         </ul>
                       </li>
                       <li className="menu-item-has-children">
-                        <a title="Mega Menu" href="#">
+                        <a /*title="Mega Menu"*/ href="#">
                           Pages
                         </a>
                         <ul className="mega-menu">

@@ -21,44 +21,44 @@ const Cta = () => {
           >
             <div className="col-xl-auto">
               <a href="blog.html" className="client-wrap">
-                <img src="assets/img/update/client/4-1.png" alt="img" />
+                <img src="./src/assets/img/update/client/4-1.webp" alt="img" />
               </a>
             </div>
             <div className="col-xl-auto">
               <a href="blog.html" className="client-wrap">
-                <img src="assets/img/update/client/4-2.jpg" alt="img" />
+                <img src="./src/assets/img/update/client/4-2.webp" alt="img" />
               </a>
             </div>
             <div className="col-xl-auto">
               <a href="blog.html" className="client-wrap">
-                <img src="assets/img/update/client/4-3.jpg" alt="img" />
+                <img src="./src/assets/img/update/client/4-3.webp" alt="img" />
               </a>
             </div>
             <div className="col-xl-auto">
               <a href="blog.html" className="client-wrap">
-                <img src="assets/img/update/client/4-4.jpg" alt="img" />
+                <img src="./src/assets/img/update/client/4-4.webp" alt="img" />
               </a>
             </div>
             <div className="col-xl-auto">
               <a href="blog.html" className="client-wrap">
-                <img src="assets/img/update/client/4-1.png" alt="img" />
+                <img src="./src/assets/img/update/client/4-1.webp" alt="img" />
               </a>
             </div>
             <div className="col-xl-auto">
               <a href="blog.html" className="client-wrap">
-                <img src="assets/img/update/client/4-2.jpg" alt="img" />
+                <img src="./src/assets/img/update/client/4-2.webp" alt="img" />
               </a>
             </div>
             <div className="col-xl-auto">
               <a href="blog.html" className="client-wrap">
-                <img src="assets/img/update/client/4-3.jpg" alt="img" />
+                <img src="./src/assets/img/update/client/4-3.webp" alt="img" />
               </a>
             </div>
-            <div className="col-xl-auto">
+            {/* <div className="col-xl-auto">
               <a href="blog.html" className="client-wrap">
-                <img src="assets/img/update/client/4-4.jpg" alt="img" />
+                <img src="./src/assets/img/update/client/4-4.webp" alt="img" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

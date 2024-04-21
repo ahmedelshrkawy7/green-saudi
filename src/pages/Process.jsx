@@ -5,12 +5,12 @@ const Process = () => {
   Process Area  
 ==============================--> */}
 <div className="process-area-1 space overflow-hidden">   
-  <div className="portfolio-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-left="0">
+  {/* <div className="portfolio-shape1_1 shape-mockup jump d-lg-block d-none" data-top="0%" data-left="0">
       <img src="./src/assets/img/process/process-shape1-1.png" alt="img"/>
-  </div>
-  <div className="portfolio-shape1_2 shape-mockup d-lg-block d-none" data-bottom="0%" data-right="0">
+  </div> */}
+  {/* <div className="portfolio-shape1_2 shape-mockup d-lg-block d-none" data-bottom="0%" data-right="0">
       <img src="./src/assets/img/process/process-shape1-2.png" alt="img"/>
-  </div>   
+  </div>    */}
   <div className="leaf-shape-animation" data-bg-src="./src/assets/img/icon/butterfly.svg"></div>
   <div className="container container2">
       <div className="row justify-content-center">

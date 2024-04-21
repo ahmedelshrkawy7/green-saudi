@@ -17,7 +17,7 @@ import Footer from "./pages/Footer"
 function App() {
 
   return (
-    <>
+    <div className="d-flex flex-column gap-5">
     <Mobile/>
     <Nav/>
     <Hero/>
@@ -32,7 +32,7 @@ function App() {
     <Footer/>
 
     
-    </>
+    </div>
   )
 }
 

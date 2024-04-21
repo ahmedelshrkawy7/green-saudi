@@ -2301,7 +2301,7 @@ textarea.is-invalid {
   position: relative;
   padding-bottom: 2px;
   margin-bottom: -2px;
-  color: var(--title-color);
+  color: #fff !important;
 }
 .link-btn i {
   margin-left: 3px;
@@ -11811,10 +11811,11 @@ span.select2-selection.select2-selection--single:focus {
 .post-single .blog-bottom,
 .blog-card .blog-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   border-top: 1px solid var(--border-color);
   padding: 20px 30px;
   align-items: center;
+  background-color: var(--theme-color);
 }
 .post-single .blog-bottom .blog-meta,
 .blog-card .blog-bottom .blog-meta {

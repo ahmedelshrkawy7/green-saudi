@@ -8,7 +8,7 @@ const Footer = () => {
 ==============================--> */}
       <footer
         className="footer-wrapper footer-layout1 overflow-hidden"
-        data-bg-src="assets/img/bg/footer-bg-1.svg"
+        data-bg-src="./src/assets/img/bg/footer-bg-1.svg"
       >
         <div className="container">
           <div className="footer-top">
@@ -70,7 +70,7 @@ const Footer = () => {
                   <div className="widget-about">
                     <div className="footer-logo">
                       <a href="index.html">
-                        <img src="assets/img/logo2.svg" alt="Ecofine" />
+                        <img src="./src/assets/img/new_logo.png" alt="Ecofine" />
                       </a>
                     </div>
                     <p className="about-text">
@@ -118,7 +118,7 @@ const Footer = () => {
                       <div className="media-img">
                         <a href="blog-details.html">
                           <img
-                            src="assets/img/widget/recent-post1-1.jpg"
+                            src="./src/assets/img/widget/recent-post1-1.webp"
                             alt="Blog Image"
                           />
                         </a>
@@ -140,7 +140,7 @@ const Footer = () => {
                       <div className="media-img">
                         <a href="blog-details.html">
                           <img
-                            src="assets/img/widget/recent-post1-2.jpg"
+                            src="./src/assets/img/widget/recent-post1-2.webp"
                             alt="Blog Image"
                           />
                         </a>

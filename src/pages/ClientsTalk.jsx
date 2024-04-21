@@ -53,7 +53,7 @@ const ClientsTalk = () => {
                 <div className="media">
                   <div className="testi-box_profile">
                     <div className="testi-box_img">
-                      <img src="./src/assets/img/testimonial/2-1.jpg" alt="img" />
+                      <img src="./src/assets/img/testimonial/2-1.webp" alt="img" />
                     </div>
                     <div className="testi-box_details">
                       <div className="testi-box_review">
@@ -83,7 +83,7 @@ const ClientsTalk = () => {
                 <div className="media">
                   <div className="testi-box_profile">
                     <div className="testi-box_img">
-                      <img src="./src/assets/img/testimonial/2-2.jpg" alt="img" />
+                      <img src="./src/assets/img/testimonial/2-2.webp" alt="img" />
                     </div>
                     <div className="testi-box_details">
                       <div className="testi-box_review">
@@ -109,11 +109,11 @@ const ClientsTalk = () => {
               </div>
             </div>
             <div className="col-lg-6">
-              <div className="testi-box style2">
+              {/* <div className="testi-box style2">
                 <div className="media">
                   <div className="testi-box_profile">
                     <div className="testi-box_img">
-                      <img src="./src/assets/img/testimonial/2-3.jpg" alt="img" />
+                      <img src="./src/assets/img/testimonial/2-3.webp" alt="img" />
                     </div>
                     <div className="testi-box_details">
                       <div className="testi-box_review">
@@ -136,7 +136,7 @@ const ClientsTalk = () => {
                   and is becoming increasingly important as human activities,
                   such as pollution, deforestation change{" "}
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

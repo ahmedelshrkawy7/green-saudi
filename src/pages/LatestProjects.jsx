@@ -5,9 +5,9 @@ const LatestProjects = () => {
   Project Area  
 ==============================--> */}
 <div className="project-area-1 space-top overflow-hidden">   
-  <div className="portfolio-shape1_1 shape-mockup jump-reverse d-lg-block d-none" data-top="0%" data-right="0">
+  {/* <div className="portfolio-shape1_1 shape-mockup jump-reverse d-lg-block d-none" data-top="0%" data-right="0">
       <img src=".src/assets/img/service/service-shape1-1.png" alt="img"/>
-  </div> 
+  </div>  */}
   <div className="leaf-shape-animation" data-bg-src=".src/assets/img/icon/leaf.svg"></div>
   <div className="container container2">
       <div className="row justify-content-between">
@@ -35,7 +35,7 @@ const LatestProjects = () => {
                   <div className="col-md-4 filter-item cat1 cat3">
                       <div className="project-card">
                           <div className="project-card-img">
-                              <img src=".src/assets/img/project/1-1.jpg" alt="img"/>
+                              <img src="./src/assets/img/project/1-1.webp" alt="img"/>
                           </div>
                           <div className="project-card-details">
                               <p className="project-card-subtitle"><a href="project-details.html">Climate</a></p>
@@ -46,7 +46,7 @@ const LatestProjects = () => {
                   <div className="col-md-4 filter-item cat1 cat2">
                       <div className="project-card">
                           <div className="project-card-img">
-                              <img src=".src/assets/img/project/1-2.jpg" alt="img"/>
+                              <img src="./src/assets/img/project/1-2.webp" alt="img"/>
                           </div>
                           <div className="project-card-details">
                               <p className="project-card-subtitle"><a href="project-details.html">Climate</a></p>
@@ -57,7 +57,7 @@ const LatestProjects = () => {
                   <div className="col-md-4 filter-item cat2 cat3">
                       <div className="project-card">
                           <div className="project-card-img">
-                              <img src=".src/assets/img/project/1-3.jpg" alt="img"/>
+                              <img src="./src/assets/img/project/1-3.webp" alt="img"/>
                           </div>
                           <div className="project-card-details">
                               <p className="project-card-subtitle"><a href="project-details.html">Recycling</a></p>

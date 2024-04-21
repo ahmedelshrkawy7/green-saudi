@@ -28,8 +28,8 @@ const Blog = () => {
               <div className="blog-card">
                 <div className="blog-img">
                   <a href="blog-details.html">
-                    <img src="assets/img/blog/1-1.jpg" alt="blog image" />
-                    <div className="blog-date">03 Apr</div>
+                    <img src="./src/assets/img/blog/1-1.webp" alt="blog image" />
+                    {/* <div className="blog-date">03 Apr</div> */}
                   </a>
                 </div>
                 <div className="blog-content">
@@ -44,14 +44,14 @@ const Blog = () => {
                   </p>
                 </div>
                 <div className="blog-bottom">
-                  <a href="blog-details.html" className="link-btn">
+                  <a href="blog-details.html" className="link-btn ">
                     Read More <i className="fas fa-angle-double-right"></i>
                   </a>
-                  <div className="blog-meta">
+                  {/* <div className="blog-meta">
                     <a href="blog.html">
                       <i className="fas fa-comments"></i>Comment 2
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -59,8 +59,8 @@ const Blog = () => {
               <div className="blog-card">
                 <div className="blog-img">
                   <a href="blog-details.html">
-                    <img src="assets/img/blog/1-2.jpg" alt="blog image" />
-                    <div className="blog-date">03 Apr</div>
+                    <img src="./src/assets/img/blog/1-2.webp" alt="blog image" />
+                    {/* <div className="blog-date">03 Apr</div> */}
                   </a>
                 </div>
                 <div className="blog-content">
@@ -78,11 +78,11 @@ const Blog = () => {
                   <a href="blog-details.html" className="link-btn">
                     Read More <i className="fas fa-angle-double-right"></i>
                   </a>
-                  <div className="blog-meta">
+                  {/* <div className="blog-meta">
                     <a href="blog.html">
                       <i className="fas fa-comments"></i>Comment 2
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -90,8 +90,8 @@ const Blog = () => {
               <div className="blog-card">
                 <div className="blog-img">
                   <a href="blog-details.html">
-                    <img src="assets/img/blog/1-3.jpg" alt="blog image" />
-                    <div className="blog-date">03 Apr</div>
+                    <img src="./src/assets/img/blog/1-3.webp" alt="blog image" />
+                    {/* <div className="blog-date">03 Apr</div> */}
                   </a>
                 </div>
                 <div className="blog-content">
@@ -109,11 +109,11 @@ const Blog = () => {
                   <a href="blog-details.html" className="link-btn">
                     Read More <i className="fas fa-angle-double-right"></i>
                   </a>
-                  <div className="blog-meta">
+                  {/* <div className="blog-meta">
                     <a href="blog.html">
                       <i className="fas fa-comments"></i>Comment 2
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

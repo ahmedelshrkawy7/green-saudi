@@ -44,7 +44,7 @@ const LatestBlog = () => {
                   </p>
                 </div>
                 <div className="blog-bottom">
-                  <a href="blog-details.html" className="link-btn">
+                  <a href="blog-details.html" className="link-btn " style={{color:"white" }}>
                     Read More <i className="fas fa-angle-double-right"></i>
                   </a>
                   <div className="blog-meta">
