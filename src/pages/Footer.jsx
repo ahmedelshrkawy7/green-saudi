@@ -1,8 +1,10 @@
-import React from "react";
+import Cta from "./Cta ";
 
 const Footer = () => {
   return (
     <div>
+          <Cta/>
+
       {/* <!--==============================
   Footer Area
 ==============================--> */}

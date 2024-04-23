@@ -24,7 +24,7 @@ const LatestProjects = () => {
       <div className="row gy-30 justify-content-center">
           <div className="col-xl-3">
               <div className="project-tab-btn filter-menu-active text-center">
-                  <button data-filter="*" className="active btn" type="button">All Projects</button>
+                  <button data-filter="*" className=" btn" type="button">All Projects</button>
                   <button className="btn" data-filter=".cat1" type="button">Climate</button>
                   <button className="btn" data-filter=".cat2" type="button">Ecosystem</button>
                   <button className="btn" data-filter=".cat3" type="button">Recycling</button>

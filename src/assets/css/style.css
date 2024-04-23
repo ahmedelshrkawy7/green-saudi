@@ -94,7 +94,9 @@
   --success-color: #28a745;
   --error-color: #dc3545;
   --border-color: #E3E3E3;
-  --title-font: "Manrope", sans-serif;
+  --saudi-green :#1f7f3e; 
+  --saudi-green-dark :#093a23; 
+   --title-font: "Manrope", sans-serif;
   --body-font: "Manrope", sans-serif;
   --icon-font: "Font Awesome 5 Free";
   --main-container: 1296px;
@@ -103,6 +105,7 @@
   --section-space-mobile: 80px;
   --section-title-space: 65px;
   --ripple-ani-duration: 5s;
+
 }
 
 /*------------------- 1.5. Typography -------------------*/
@@ -1107,7 +1110,7 @@ input {
   padding: 0 30px;
   border: 1px solid transparent;
   color: var(--body-color);
-  background-color: var(--smoke-color);
+  /* background-color: var(--smoke-color); */
   font-size: 16px;
   font-weight: 300;
   width: 100%;
@@ -1433,9 +1436,12 @@ input[type=date]::-webkit-calendar-picker-indicator {
   right: auto;
 }
 
-option:checked, option:focus, option:hover {
+ option:focus, option:hover {
   background-color: var(--theme-color);
   color: var(--white-color);
+}
+option:hover{
+  background-color: #01133c;
 }
 
 input::-webkit-outer-spin-button,
@@ -2041,7 +2047,7 @@ textarea.is-invalid {
   z-index: -1;
 }
 .btn:focus, .btn:hover, .btn.active {
-  color: var(--theme-color);
+  color: #fff !important;
   outline: none;
   box-shadow: none;
 }
@@ -11590,7 +11596,7 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .counter-card {
-  text-align: center;
+  text-align: left;
 }
 .counter-card-icon {
   margin-bottom: 44px;
@@ -13527,7 +13533,7 @@ span.select2-selection.select2-selection--single:focus {
   margin-top: 40px;
   /* Large devices */
 }
-.donation-page-single .donation-form input {
+.donation-page-single .donation-form input ,.donation-page-single .donation-form select {
   height: 48px;
 }
 .donation-page-single .donation-form .btn.style-border {
@@ -13579,7 +13585,7 @@ span.select2-selection.select2-selection--single:focus {
   color: var(--body-color);
 }
 .donation-page-single .nav-pills .nav-item .nav-link.active, .donation-page-single .nav-pills .nav-item .nav-link:active, .donation-page-single .nav-pills .nav-item .nav-link:focus, .donation-page-single .nav-pills .nav-item .nav-link:hover {
-  background: var(--title-color);
+  background-color:var(--saudi-green-dark);
   color: var(--white-color);
 }
 
