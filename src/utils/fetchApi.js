@@ -13,12 +13,24 @@
 
 import axios from "axios";
 
+const Axios = axios.create({
+  baseURL: "https://new.tge.sa/api",
+});
+
 export const getData = async (url) => {
   try {
-    const response = await axios.get(url);
-    const data = response.data;
-    console.log("🚀 ~ getData ~ data:", data);
+    const response = await Axios.get(url);
+    const data = response.data.data;
     return data;
+  } catch (error) {
+    console.error(error);
+    throw error; // Re-throw the error to be handled by React Query
+  }
+};
+export const postData = async (url, data) => {
+  try {
+    const response = await Axios.post(url, data);
+    return response;
   } catch (error) {
     console.error(error);
     throw error; // Re-throw the error to be handled by React Query

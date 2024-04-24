@@ -13,11 +13,12 @@ import Services from "./pages/Services";
 import Footer from "./pages/Footer";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import { Route, Routes } from "react-router-dom";
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 60 * 1000,
+      staleTime: 6 * 1000,
     },
   },
 });
