@@ -23,26 +23,33 @@ const queryClient = new QueryClient({
   },
 });
 
+function Home() {
+  return (
+    <div className="d-flex flex-column gap-5">
+      <Mobile />
+      <Nav />
+      <Hero />
+      <About />
+      <Services />
+      <Counter />
+      <Process />
+      <LatestProjects />
+      <ClientsTalk />
+      <Blog />
+      <Footer />
+    </div>
+  );
+}
+
 function App() {
   return (
-    // <div className="d-flex flex-column gap-5">
-    // <Mobile/>
-    // <Nav/>
-    // <Hero/>
-    // <About/>
-    // <Services/>
-    // <Counter/>
-    // <Process/>
-    // <LatestProjects/>
-    // <ClientsTalk/>
-    // <Blog/>
-    // <Footer/>
-
-    // </div>
-
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
-      <Register />
+
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
     </QueryClientProvider>
   );
 }

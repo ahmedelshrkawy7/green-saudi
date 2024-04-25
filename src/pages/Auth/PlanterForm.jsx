@@ -1,4 +1,15 @@
+import { useFormikContext } from "formik";
+import { useQuery } from "react-query";
+import { getData } from "../../utils/fetchApi";
+
 function PlanterForm() {
+  const formik = useFormikContext();
+
+  const { isLoading, error, data } = useQuery("planter", () =>
+    getData("/user/types?parent_id=2")
+  );
+
+  console.log("🚀 ~ data:", data);
   return (
     <div
       className="tab-pane fade"
@@ -13,6 +24,9 @@ function PlanterForm() {
             <option selected hidden>
               Service Type{" "}
             </option>
+            <option>individual</option>
+            <option>SME</option>
+            <option>Government</option>
             {/* {data?.data[1]?.types?.map((opt) => {
           console.log(
             "🚀 ~ {data?.data?.types?.map ~ opt:",
@@ -38,9 +52,10 @@ function PlanterForm() {
             <input
               type="email"
               className="form-control style-border"
-              name="email2"
+              name="email"
               id="email2"
               placeholder="Email Address"
+              {...formik.getFieldProps("email")}
             />
           </div>
         </div>
@@ -50,9 +65,10 @@ function PlanterForm() {
             <input
               type="text"
               className="form-control style-border"
-              name="name2"
+              name="phone"
               id="name2"
               placeholder="+966"
+              {...formik.getFieldProps("phone")}
             />
           </div>
         </div>
@@ -63,9 +79,10 @@ function PlanterForm() {
             <input
               type="password"
               className="form-control style-border"
-              name="lname2"
+              name="password"
               id="lname2"
               placeholder="Password"
+              {...formik.getFieldProps("password")}
             />
           </div>
         </div>

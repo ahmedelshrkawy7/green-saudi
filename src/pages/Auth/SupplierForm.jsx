@@ -1,4 +1,15 @@
+import { useFormikContext } from "formik";
+import { useQuery } from "react-query";
+import { getData } from "../../utils/fetchApi";
+
 const SupplierForm = () => {
+  const formik = useFormikContext();
+
+  const { isLoading, error, data } = useQuery("supplier", () =>
+    getData("/user/types?parent_id=7")
+  );
+  console.log("🚀 ~ SupplierForm ~ data:", data);
+
   return (
     <div
       className="tab-pane fade"
@@ -13,9 +24,9 @@ const SupplierForm = () => {
             <option selected hidden>
               Service Type{" "}
             </option>
-            <option>Individual</option>
-            <option>SME</option>
-            <option>Government</option>
+
+            <option>Tree Provider</option>
+            <option>02 Exchange</option>
           </select>
           {/* <input
           type="text"
@@ -31,9 +42,10 @@ const SupplierForm = () => {
             <input
               type="email"
               className="form-control style-border"
-              name="email4"
+              name="email"
               id="email4"
               placeholder="Email Address"
+              {...formik.getFieldProps("email")}
             />
           </div>
         </div>
@@ -44,9 +56,10 @@ const SupplierForm = () => {
             <input
               type="text"
               className="form-control style-border"
-              name="name4"
+              name="phone"
               id="name4"
               placeholder="Mobile"
+              {...formik.getFieldProps("phone")}
             />
           </div>
         </div>
@@ -56,9 +69,10 @@ const SupplierForm = () => {
             <input
               type="Password"
               className="form-control style-border"
-              name="lname4"
+              name="password"
               id="lname4"
               placeholder="**********"
+              {...formik.getFieldProps("password")}
             />
           </div>
         </div>

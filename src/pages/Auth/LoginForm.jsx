@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { getData, postData } from "../../utils/fetchApi";
-import { Formik } from "formik";
+import { Form, Formik } from "formik";
 import BeneficiaryForm from "./BeneficiaryForm";
 import PlanterForm from "./PlanterForm";
 import SupplierForm from "./SupplierForm";
@@ -44,13 +44,14 @@ const LoginForm = () => {
                   <div className="page-content justify-content-center">
                     <Formik
                       initialValues={{
-                        firstName: "",
-                        lastName: "",
+                        phone: "",
+                        password: "",
                         email: "",
+                        name: "Ahmed",
+                        type_id: 2,
                       }}
                       onSubmit={(values) => {
-                        console.log("🚀 ~ LoginForm ~ values:", "values");
-                        Post.mutate("user/register", values);
+                        Post.mutate(values);
                       }}
                     >
                       <div className="donation-form ">
@@ -61,6 +62,28 @@ const LoginForm = () => {
                               id="pills-tab"
                               role="tablist"
                             >
+                              {/* {data.types.map((type) => {
+                                return (
+                                  <li
+                                    className="nav-item"
+                                    role="presentation"
+                                    key={type.id}
+                                  >
+                                    <button
+                                      className="nav-link active"
+                                      id="pills-home-tab"
+                                      data-bs-toggle="pill"
+                                      data-bs-target="#pills-home"
+                                      type="button"
+                                      role="tab"
+                                      aria-controls="pills-home"
+                                      aria-selected="true"
+                                    >
+                                      {type.name}
+                                    </button>
+                                  </li>
+                                );
+                              })} */}
                               <li className="nav-item" role="presentation">
                                 <button
                                   className="nav-link active"
@@ -72,7 +95,7 @@ const LoginForm = () => {
                                   aria-controls="pills-home"
                                   aria-selected="true"
                                 >
-                                  Beneficiary
+                                  Benefeciary
                                 </button>
                               </li>
                               <li className="nav-item" role="presentation">
@@ -86,7 +109,6 @@ const LoginForm = () => {
                                   aria-controls="pills-profile"
                                   aria-selected="false"
                                 >
-                                  {" "}
                                   Planter
                                 </button>
                               </li>
@@ -107,11 +129,16 @@ const LoginForm = () => {
                                 </button>
                               </li>
                             </ul>
-                            <div className="tab-content" id="pills-tabContent">
-                              <BeneficiaryForm />
-                              <PlanterForm />
-                              <SupplierForm />
-                            </div>
+                            <Form>
+                              <div
+                                className="tab-content"
+                                id="pills-tabContent"
+                              >
+                                <BeneficiaryForm />
+                                <PlanterForm />
+                                <SupplierForm />
+                              </div>
+                            </Form>
                           </div>
                         </div>
                       </div>
