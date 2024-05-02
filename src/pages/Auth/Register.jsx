@@ -3,10 +3,9 @@ import Nav from "../Nav";
 import LoginForm from "./LoginForm";
 import Loginheader from "./Loginheader";
 import { getData } from "../../utils/fetchApi";
+import { Outlet } from "react-router-dom";
 
 const Register = () => {
-  const QueryClient = useQueryClient();
-
   //   console.log("🚀 ~ Register ~ query:", query);
   //   const mutation = useMutation(postTodo, {
   //     onSuccess: () => {
@@ -21,9 +20,7 @@ const Register = () => {
 
   return (
     <>
-      <Nav />
-      <Loginheader />
-      <LoginForm />
+      <Outlet />
     </>
   );
 };

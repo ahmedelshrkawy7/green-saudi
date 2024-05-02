@@ -14,6 +14,12 @@ import Footer from "./pages/Footer";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import { Route, Routes } from "react-router-dom";
+import Otp from "./pages/Auth/otp/Otp";
+import LoginForm from "./pages/Auth/LoginForm";
+import Forget from "./pages/Auth/Forget";
+import Reset from "./pages/Auth/Reset";
+import Offset from "./pages/offset/Offset";
+import Plant from "./pages/plant/Plant";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,8 +32,6 @@ const queryClient = new QueryClient({
 function Home() {
   return (
     <div className="d-flex flex-column gap-5">
-      <Mobile />
-      <Nav />
       <Hero />
       <About />
       <Services />
@@ -45,10 +49,22 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
+      <Mobile />
+      <Nav />
 
       <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<Register />}>
+          <Route path="/auth/register" element={<LoginForm />} />
+          <Route path="/auth/otp" element={<Otp />} />
+          <Route path="/auth/forget" element={<Forget />} />
+          <Route path="/auth/reset" element={<Reset />} />
+          <Route path="/auth/login" element={<Login />} />
+        </Route>
+        <Route path="*" element={<Home />} />
+        <Route path="/offset" element={<Offset />} />
+        {/* <Route path="/plant" element={<Plant />} /> */}
+        <Route path="*" element={<Home />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </QueryClientProvider>
   );

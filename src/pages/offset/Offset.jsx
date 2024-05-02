@@ -1,62 +1,38 @@
-import { useQuery, useMutation, useQueryClient } from "react-query";
+import React, { useState } from "react";
+import Loginheader from "../Auth/Loginheader";
+import { Formik, useFormik } from "formik";
+import { useMutation, useQuery } from "react-query";
 import { getData, postData } from "../../utils/fetchApi";
-import { Form, Formik } from "formik";
-import BeneficiaryForm from "./BeneficiaryForm";
-import PlanterForm from "./PlanterForm";
-import SupplierForm from "./SupplierForm";
-import { useState } from "react";
-import * as Yup from "yup";
-import { notifySuccess, notifyError } from "../notifications/notify";
-import Otp from "./otp/Otp";
-import { useNavigate } from "react-router-dom";
-import Loginheader from "./Loginheader";
-
-const LoginForm = () => {
+import "./Offset.css";
+import img from "../../assets/img/offset/greenMap.jpg";
+import { BsPerson } from "react-icons/bs";
+import { TbBuildingFactory } from "react-icons/tb";
+import SubmitBtn from "../../components/SubmitBtn";
+import Factory from "./offset-types/Factory";
+import Individual from "./offset-types/Individual";
+import SME from "./offset-types/SME";
+const Offset = () => {
   const [type, setType] = useState(0);
-  // const queryClient = useQueryClient();
-  const navigate = useNavigate();
-
+  const validationSchema = {};
+  const Post = useMutation(postData);
   const { isLoading, error, data } = useQuery("users", () =>
     getData("/user/types")
   );
-  let validationSchema = Yup.object().shape({
-    email: Yup.string().email("Invalid email").required("Required"),
-    phone: Yup.string().required("Required"),
-    password: Yup.string().required("Required"),
+
+  const formik = useFormik({
+    initialValues: {},
+    onSubmit: () => {},
   });
-
-  const Post = useMutation(postData, {
-    onSuccess: (e) => {
-      notifySuccess("Otp has send ");
-      // setKey(e?.data?.data.key);
-      navigate("/otp", { state: { key: e?.data?.data.key } });
-    },
-    onError: ({ message }) => {
-      notifyError(message);
-    },
-  });
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  // error("ddddd");
-
-  //   const handleSubmit = () => {
-  //     Post.mutate("/user/register", {});
-  //   };
 
   return (
-    <div>
-      <Loginheader />
-      {/* <!--==============================
-  Donation Details 02  
-  ==============================--> */}
-      <div className="donation-details-area space-top space-extra-bottom overflow-hidden pt-0">
+    <>
+      <Loginheader title="OFFSET NOW" />
+
+      <div className="offset space-top space-extra-bottom overflow-hidden pt-0  d-flex mt-5 ">
         <div className="container">
           <div className="row gx-40 justify-content-center ">
-            <div className="col-lg-7 col-xl-8">
-              <div className="donation-page-single">
+            <div className=" col-12 col-lg-10 col-xl-10 ">
+              <div className="donation-page-single ">
                 <div className="project-page-single">
                   <div className="page-content justify-content-center">
                     <Formik
@@ -72,23 +48,37 @@ const LoginForm = () => {
                         Post.mutate(["/user/register", values]);
                       }}
                     >
-                      <div className="donation-form ">
+                      <div className="donation-form m-0  ">
                         <div className="row">
-                          <div className="col-12">
+                          <div className="col-12 ">
                             <ul
-                              className="nav nav-pills"
+                              className="nav nav-pills justify-content-between mb-5"
                               // id="pills-tab"
                               // role="tablist"
                             >
-                              {data?.types?.map((typ, id) => {
+                              {[
+                                {
+                                  name: "individual",
+                                  icon: <BsPerson size={32} />,
+                                },
+                                {
+                                  name: " SME",
+                                  icon: <TbBuildingFactory size={32} />,
+                                },
+                                {
+                                  name: "Factories or special projects",
+                                  icon: <TbBuildingFactory size={32} />,
+                                },
+                              ].map((typ, id) => {
                                 return (
                                   <li
-                                    className="nav-item"
+                                    className="nav-item d-flex align-items-center gap-3"
                                     role="presentation"
                                     key={typ.id}
                                   >
+                                    {typ.icon}
                                     <button
-                                      className={`nav-link  ${
+                                      className={`nav-link mt-2  ${
                                         type == id && "active"
                                       } `}
                                       // id="pills-home-tab"
@@ -108,7 +98,16 @@ const LoginForm = () => {
                                 );
                               })}
                             </ul>
-                            <Form className="needs-validation">
+                            <form
+                              onSubmit={formik.handleSubmit}
+                              className="w-100"
+                            >
+                              {type == 0 && <Individual />}
+                              {type == 1 && <SME />}
+                              {type == 2 && <Factory />}
+                              <SubmitBtn text="Next" />
+                            </form>
+                            {/* <Form className="needs-validation">
                               <div>
                                 {type === 0 && (
                                   <BeneficiaryForm
@@ -132,7 +131,7 @@ const LoginForm = () => {
                                   Register
                                 </button>
                               </div>
-                            </Form>
+                            </Form> */}
                           </div>
                         </div>
                       </div>
@@ -141,11 +140,15 @@ const LoginForm = () => {
                 </div>
               </div>
             </div>
+            {/* <div className=" col-12 col-lg-6 col-xl-6 saudia_map vh-100"></div> */}
+            {/* <div className="col-6">
+              <img src={img} alt="" width="100%" />
+            </div> */}
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default LoginForm;
+export default Offset;

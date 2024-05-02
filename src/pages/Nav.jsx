@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
+  const navigate = useNavigate();
   return (
     <div>
       {/* <!--==============================
@@ -54,7 +56,12 @@ Header Area
                   <div className="header-logo">
                     <a href="index.html">
                       {" "}
-                      <img src="./src/assets/img/new_logo.png" alt="logo"  style={{width:"200px" }}/>{" "}
+                      <img
+                        src="https://tge.sa/images/Simplification.png
+                        "
+                        alt="logo"
+                        style={{ width: "200px" }}
+                      />{" "}
                     </a>
                   </div>
                 </div>
@@ -62,9 +69,7 @@ Header Area
                   <nav className="main-menu d-none d-lg-inline-block">
                     <ul>
                       <li className="menu-item-has-children">
-                        <a  href="#">
-                          Home
-                        </a>
+                        <a href="#">Home</a>
                         <ul className="sub-menu">
                           <li className="menu-item-has-children">
                             <a title="New Demo" href="#">
@@ -196,9 +201,7 @@ Header Area
                         </ul>
                       </li>
                       <li className="menu-item-has-children">
-                        <a /*title="Mega Menu"*/ href="#">
-                          Pages
-                        </a>
+                        <a /*title="Mega Menu"*/ href="#">Pages</a>
                         <ul className="mega-menu">
                           <li>
                             <a href="#">About RTL Page</a>
@@ -581,8 +584,12 @@ Header Area
                 </div>
                 <div className="col-auto d-none d-xl-block">
                   <div className="header-button">
-                    <a href="contact.html" className="btn">
-                      Get A Quote
+                    <a className="btn" onClick={() => navigate("/plant")}>
+                      PLANT A TREE
+                      <i className="fas fa-angle-double-right"></i>
+                    </a>
+                    <a className="btn" onClick={() => navigate("/offset")}>
+                      OFFSET NOW
                       <i className="fas fa-angle-double-right"></i>
                     </a>
                   </div>

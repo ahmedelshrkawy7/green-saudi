@@ -1,0 +1,14 @@
+.greensaudi__offset input {
+  width: 20px;
+  display: block;
+}
+
+.offset_form {
+  margin-top: 50px;
+}
+.saudia_map {
+  background-image: url(../../assets/img/offset/greenMap.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

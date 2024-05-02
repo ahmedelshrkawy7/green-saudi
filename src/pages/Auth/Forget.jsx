@@ -11,7 +11,7 @@ import Otp from "./otp/Otp";
 import { useNavigate } from "react-router-dom";
 import Loginheader from "./Loginheader";
 
-const Login = () => {
+const Forget = () => {
   const [type, setType] = useState(0);
   // const queryClient = useQueryClient();
   const navigate = useNavigate();
@@ -21,27 +21,27 @@ const Login = () => {
   );
   let validationSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Required"),
-    password: Yup.string().required("Required"),
   });
 
   const formik = useFormik({
     initialValues: {
-      password: "",
       email: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      Post.mutate(["/user/login", values]);
+      Post.mutate(["/user/password/forget", values]);
     },
   });
 
   const Post = useMutation(postData, {
     onSuccess: (e) => {
-      notifySuccess("Login in successfully ! ");
+      console.log("🚀 ~ Forget ~ e:", e);
+      notifySuccess("Otp has sent to your email ! ");
       // setKey(e?.data?.data.key);
-      navigate("/otp", {
-        state: e?.data?.data.key,
-        email: formik.values.email,
+      navigate("/auth/otp", {
+        state: {
+          email: formik.values.email,
+        },
       });
     },
     onError: ({ message }) => {
@@ -61,11 +61,11 @@ const Login = () => {
 
   return (
     <div>
-      <Loginheader />
-
       {/* <!--==============================
   Donation Details 02  
   ==============================--> */}
+      <Loginheader />
+
       <div className="donation-details-area space-top space-extra-bottom overflow-hidden pt-0">
         <div className="container">
           <div className="row gx-40 justify-content-center ">
@@ -102,44 +102,15 @@ const Login = () => {
                                   </div>
                                 </div>
                               </div>
-
-                              <div className="col-lg-12">
-                                <div className="form-group">
-                                  <label>Password</label>
-                                  <input
-                                    type="password"
-                                    className={`form-control style-border ${
-                                      formik.touched.password &&
-                                      formik.errors.password &&
-                                      "is-invalid"
-                                    }`}
-                                    name="password"
-                                    id="lname1"
-                                    placeholder="Password"
-                                    {...formik.getFieldProps("password")}
-                                  />
-                                  <div className="invalid-feedback">
-                                    {formik.touched.password &&
-                                      formik.errors.password}
-                                  </div>
-                                </div>
-                              </div>
                             </div>
 
-                            <span
-                              className="text-success  "
-                              style={{ cursor: "pointer" }}
-                              onClick={() => navigate("/auth/forget")}
-                            >
-                              Forget Password{" "}
-                            </span>
                             <div className="btn-wrap justify-content-between mt-20">
                               <button
                                 type="submit"
                                 className="btn style4"
                                 disabled={Post.isLoading}
                               >
-                                Login
+                                Enter
                               </button>
                             </div>
                           </form>
@@ -157,4 +128,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Forget;

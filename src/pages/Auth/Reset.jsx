@@ -11,7 +11,7 @@ import Otp from "./otp/Otp";
 import { useNavigate } from "react-router-dom";
 import Loginheader from "./Loginheader";
 
-const Login = () => {
+const Reset = () => {
   const [type, setType] = useState(0);
   // const queryClient = useQueryClient();
   const navigate = useNavigate();
@@ -20,18 +20,18 @@ const Login = () => {
     getData("/user/types")
   );
   let validationSchema = Yup.object().shape({
-    email: Yup.string().email("Invalid email").required("Required"),
+    password_confirmation: Yup.string().required("Required"),
     password: Yup.string().required("Required"),
   });
 
   const formik = useFormik({
     initialValues: {
       password: "",
-      email: "",
+      password_confirmation: "",
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      Post.mutate(["/user/login", values]);
+      Post.mutate(["/user/password/reset", values]);
     },
   });
 
@@ -83,28 +83,6 @@ const Login = () => {
                             <div className="row mt-4">
                               <div className="col-lg-12">
                                 <div className="form-group">
-                                  <label>Email *</label>
-                                  <input
-                                    type="email"
-                                    className={`form-control style-border ${
-                                      formik.touched.email &&
-                                      formik.errors.email &&
-                                      "is-invalid"
-                                    }`}
-                                    name="email"
-                                    id="email1"
-                                    placeholder="Email Address"
-                                    {...formik.getFieldProps("email")}
-                                  />
-                                  <div className="invalid-feedback">
-                                    {formik.touched.email &&
-                                      formik.errors.email}
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div className="col-lg-12">
-                                <div className="form-group">
                                   <label>Password</label>
                                   <input
                                     type="password"
@@ -124,22 +102,38 @@ const Login = () => {
                                   </div>
                                 </div>
                               </div>
+                              <div className="col-lg-12">
+                                <div className="form-group">
+                                  <label>Confirm Password *</label>
+                                  <input
+                                    type="password"
+                                    className={`form-control style-border ${
+                                      formik.touched.password_confirmation &&
+                                      formik.errors.password_confirmation &&
+                                      "is-invalid"
+                                    }`}
+                                    name="password_confirmation"
+                                    id="email1"
+                                    placeholder="Email Address"
+                                    {...formik.getFieldProps(
+                                      "password_confirmation"
+                                    )}
+                                  />
+                                  <div className="invalid-feedback">
+                                    {formik.touched.password_confirmation &&
+                                      formik.errors.password_confirmation}
+                                  </div>
+                                </div>
+                              </div>
                             </div>
 
-                            <span
-                              className="text-success  "
-                              style={{ cursor: "pointer" }}
-                              onClick={() => navigate("/auth/forget")}
-                            >
-                              Forget Password{" "}
-                            </span>
                             <div className="btn-wrap justify-content-between mt-20">
                               <button
                                 type="submit"
                                 className="btn style4"
                                 disabled={Post.isLoading}
                               >
-                                Login
+                                Submit
                               </button>
                             </div>
                           </form>
@@ -157,4 +151,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Reset;

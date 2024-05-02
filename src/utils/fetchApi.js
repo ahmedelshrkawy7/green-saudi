@@ -27,10 +27,9 @@ export const getData = async (url) => {
     throw error; // Re-throw the error to be handled by React Query
   }
 };
-export const postData = async (data) => {
-  console.log("🚀 ~ postData ~ data:", data);
+export const postData = async ([endpoint, data]) => {
   try {
-    const response = await Axios.post("user/register", data);
+    const response = await Axios.post(endpoint, data);
     return response;
   } catch (error) {
     console.error(error);
