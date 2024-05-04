@@ -1,0 +1,22 @@
+.hero-5 {
+    .hero-thumb5 {
+        left: 0;
+        right: auto;
+        transform: rotateY(180deg);
+    }
+}
+@include xl {
+    .hero-5 .hero-thumb5 {
+        left: -170px;
+    }
+}
+@include lg {
+    .hero-5 .hero-thumb5 {
+        left: -220px;
+    }
+}
+.project-card.style4 .project-card-details {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+}

@@ -1,0 +1,43 @@
+.hero-7 .slick-arrow.slick-prev {
+    right: auto;
+}
+.service-card.style7 {
+    text-align: right;
+}
+.service-card.style8 {
+    text-align: right;
+}
+.service-card.style8:hover .service-card_content {
+    transform: translate(-50%, 0);
+}
+.cta-wrap4 .cta-4-thumb {
+    left: -80px;
+    right: auto;
+    @include xl {
+        left: 0;
+    }
+}
+.testi-box.style4 .testi-box_text:after {
+    right: 65px;
+    left: auto;
+    transform: skewY(45deg);
+    border-left: 0;
+    border-right: 1px solid var(--border-color);
+}
+
+.project-area-7 .project-card.style4 .project-card-details {
+    border-radius: 10px;
+}
+.donation-card.style4 .donation-card-content .date {
+    left: auto;
+    right: 30px;
+}
+.faq-content-wrap2 .contact-form-wrap {
+    left: 0;
+    right: auto;
+}
+.about-thumb7 {
+    @include lg {
+        text-align: right;
+    }
+}

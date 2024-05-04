@@ -1,0 +1,125 @@
+.header-layout4 {
+    .header-top {
+        .header-left-sidebar {
+            padding-right: 480px;
+            padding-left: 0;
+        }
+    }
+    .main-menu {
+        padding-right: 240px;
+        padding-left: 0;
+    }
+    .header-logo {
+        margin-right: 30px;
+        margin-left: 0;
+    }
+    .logo-bg {
+        left: auto;
+        right: 0;
+        transform: rotateY(180deg);
+    }
+    .logo-bg2 {
+        left: auto;
+        right: 0;
+        transform: rotateY(180deg);
+    }
+    .header-call-box {
+        .icon {
+            margin-left: 15px;
+            margin-right: 0;
+        }
+    }
+}
+@include xxl {
+    .header-layout4 .header-logo {
+        margin-right: 0;
+    }
+    .header-layout4 .main-menu {
+        padding-right: 200px;
+    }
+    .header-layout4 .header-top .header-left-sidebar {
+        padding-right: 408px;
+    }
+}
+@include ml {
+    .header-layout4 .main-menu {
+        padding-right: 100px;
+    }
+    .header-layout4 .header-top .header-left-sidebar {
+        padding-right: 308px;
+    }
+}
+
+@include xs {
+    .header-layout4 .logo-bg {
+        width: 57.5%;
+    }
+    .header-layout4 .logo-bg2 {
+        width: 59%;
+    }
+}
+@include vxs {
+    .header-layout4 .logo-bg {
+        width: 72.5%;
+    }
+    .header-layout4 .logo-bg2 {
+        width: 74%;
+    }
+}
+
+/*about area 4***********************/
+.about-info-card-wrap {
+    .about-info-card {
+        padding-left: 25px;
+        margin-left: 25px;
+        border-left: 1px solid #24231D66;
+        padding-right: 0;
+        margin-right: 0;
+        border-right: 0;
+        &:last-child {
+            border-left: 0;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        .about-info-card_icon {
+            margin-left: 15px;
+            margin-right: 0;
+        }
+    }
+    @include xs {
+        .about-info-card {
+            margin-left: 0;
+            padding-left: 0;
+            border-left: 0;
+        }
+    }
+}
+
+.service-card.style4 .service-card_content {
+    text-align: right;
+}
+.service-card.style4 .service-card_content .service-card_icon {
+    margin-right: 0;
+}
+
+.project-card.style3 .project-card-details {
+    padding: 0;
+    border: 0;
+    margin-left: 30px;
+    margin-right: 0;
+    @include lg {
+        margin-left: 0;
+    }
+}
+
+.team-card.style4 .team-card-content {
+    clip-path: polygon(0% 1%, 100% 0%, 100% 100%, 16% 100%);
+    &:after {
+        clip-path: polygon(0% 1%, 100% 0%, 100% 100%, 16% 100%);
+        inset: 0px 0px 6px 6px;
+    }
+}
+
+.footer-layout2 .copyright-wrap .footer-links ul li {
+    border-left: 0;
+}

@@ -1,0 +1,26 @@
+.post-meta-item .author img, .blog-meta .author img {
+    margin-left: 15px;
+    margin-right: 0;
+}
+.blog-details-area .nav-links .post-thum-nav.nav-next {
+    padding-left: 0px;
+    padding-right: 30px;
+    text-align: left;
+    @include xs {
+        padding-right: 0;
+        text-align: right;
+    }
+}
+.blog-details-area .nav-links .post-thum-nav.nav-previous {
+    padding-right: 0px;
+    padding-left: 30px;
+}
+.sidebar-area {
+    .widget_title:before {
+        display: none;
+    }
+    .recent-post .media-img {
+        margin-right: 0px;
+        margin-left: 20px;
+    }
+}
