@@ -14,6 +14,10 @@ body {
 iframe {
   border: none;
 }
+.invoices th ,.invoice-section h5{
+  background-color: #c2bcbc;
+}
+
 
 button:focus,
 a:focus,

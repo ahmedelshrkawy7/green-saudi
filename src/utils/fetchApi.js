@@ -13,8 +13,9 @@
 
 import axios from "axios";
 
-const Axios = axios.create({
-  baseURL: "https://new.tge.sa/api",
+export const Axios = axios.create({
+  // baseURL: "https://new.tge.sa/api",
+  baseURL: "http://216.219.83.182/Zatca/public/api",
 });
 
 export const getData = async (url) => {

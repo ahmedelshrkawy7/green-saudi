@@ -13,13 +13,17 @@ import Services from "./pages/Services";
 import Footer from "./pages/Footer";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import Otp from "./pages/Auth/otp/Otp";
 import LoginForm from "./pages/Auth/LoginForm";
 import Forget from "./pages/Auth/Forget";
 import Reset from "./pages/Auth/Reset";
 import Offset from "./pages/offset/Offset";
-import Plant from "./pages/plant/Plant";
+import Plant from "./pages/plantsection/plant/Plant";
+import OffsetStatistics from "./pages/offset/offsetStatistics/OffsetStatistics";
+import OffsetDetails from "./pages/offset/offset-details/OffsetDetails";
+import DonateDetails from "./pages/plantsection/plantDonor/DonateDetails";
+import Certificate from "./pages/certificate/Certificate";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -62,7 +66,13 @@ function App() {
         </Route>
         <Route path="*" element={<Home />} />
         <Route path="/offset" element={<Offset />} />
-        {/* <Route path="/plant" element={<Plant />} /> */}
+        <Route path="/offsetstatistics" element={<OffsetStatistics />} />
+        <Route path="/offsetdetails" element={<OffsetDetails />} />
+        <Route path="plant" element={<Outlet />}>
+          <Route index element={<Plant />} />
+          <Route path="/plant/donorDetails" element={<DonateDetails />} />
+          <Route path="/plant/certificate" element={<Certificate />} />
+        </Route>
         <Route path="*" element={<Home />} />
         <Route path="*" element={<Home />} />
       </Routes>

@@ -1,58 +1,33 @@
-import { useQuery, useMutation, useQueryClient } from "react-query";
-import { getData, postData } from "../../utils/fetchApi";
 import { Form, Formik, useFormik } from "formik";
-import BeneficiaryForm from "./BeneficiaryForm";
-import PlanterForm from "./PlanterForm";
-import SupplierForm from "./SupplierForm";
+
 import { useState } from "react";
 import * as Yup from "yup";
-import { notifySuccess, notifyError } from "../notifications/notify";
-import Otp from "./otp/Otp";
-import { useNavigate } from "react-router-dom";
-import Loginheader from "./Loginheader";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Login = () => {
+const Form4 = () => {
   const [type, setType] = useState(0);
   // const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const { state } = useLocation();
+  console.log("🚀 ~ Form3 ~ state:", state);
 
-  const { isLoading, error, data } = useQuery("users", () =>
-    getData("/user/types")
-  );
-  let validationSchema = Yup.object().shape({
-    email: Yup.string().email("Invalid email").required("Required"),
-    password: Yup.string().required("Required"),
-  });
+  let validationSchema = Yup.object().shape({});
 
   const formik = useFormik({
     initialValues: {
-      password: "",
-      email: "",
+      request_id: state.request_id,
+      user_name: state.user_name,
+      password: state.password,
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      Post.mutate(["/user/login", values]);
+      axios.post("/getPsid", values).then(({ data }) => {
+        console.log("🚀 ~ .then ~ data:", data);
+        localStorage.setItem("csr", data.data.csr);
+      });
     },
   });
-
-  const Post = useMutation(postData, {
-    onSuccess: (e) => {
-      notifySuccess("Login in successfully ! ");
-      // setKey(e?.data?.data.key);
-      // navigate("/otp", {
-      //   state: e?.data?.data.key,
-      //   email: formik.values.email,
-      // });
-      navigate("/plant/certificate");
-    },
-    onError: ({ message }) => {
-      notifyError(message);
-    },
-  });
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
 
   // error("ddddd");
 
@@ -62,8 +37,6 @@ const Login = () => {
 
   return (
     <div>
-      <Loginheader title="Login" />
-
       {/* <!--==============================
   Donation Details 02  
   ==============================--> */}
@@ -77,6 +50,7 @@ const Login = () => {
                     <div className="donation-form">
                       <div className="row">
                         <div className="col-12">
+                          <h2>Psid</h2>
                           <form
                             className="needs-validation"
                             onSubmit={formik.handleSubmit}
@@ -84,39 +58,60 @@ const Login = () => {
                             <div className="row mt-4">
                               <div className="col-lg-12">
                                 <div className="form-group">
-                                  <label>Email *</label>
+                                  <label>request_id *</label>
                                   <input
-                                    type="email"
+                                    type="text"
                                     className={`form-control style-border ${
-                                      formik.touched.email &&
-                                      formik.errors.email &&
+                                      formik.touched.request_id &&
+                                      formik.errors.request_id &&
                                       "is-invalid"
                                     }`}
-                                    name="email"
+                                    name="request_id"
                                     id="email1"
-                                    placeholder="Email Address"
-                                    {...formik.getFieldProps("email")}
+                                    placeholder="request_id"
+                                    {...formik.getFieldProps("request_id")}
                                   />
                                   <div className="invalid-feedback">
-                                    {formik.touched.email &&
-                                      formik.errors.email}
+                                    {formik.touched.request_id &&
+                                      formik.errors.request_id}
                                   </div>
                                 </div>
                               </div>
 
                               <div className="col-lg-12">
                                 <div className="form-group">
-                                  <label>Password</label>
+                                  <label>user_name</label>
                                   <input
-                                    type="password"
+                                    type="text"
+                                    className={`form-control style-border ${
+                                      formik.touched.user_name &&
+                                      formik.errors.user_name &&
+                                      "is-invalid"
+                                    }`}
+                                    name="user_name"
+                                    id="lname1"
+                                    placeholder="user_name"
+                                    {...formik.getFieldProps("user_name")}
+                                  />
+                                  <div className="invalid-feedback">
+                                    {formik.touched.user_name &&
+                                      formik.errors.user_name}
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="col-lg-12">
+                                <div className="form-group">
+                                  <label>password</label>
+                                  <input
+                                    type="text"
                                     className={`form-control style-border ${
                                       formik.touched.password &&
                                       formik.errors.password &&
                                       "is-invalid"
                                     }`}
-                                    name="password"
+                                    name="user_name"
                                     id="lname1"
-                                    placeholder="Password"
+                                    placeholder="password"
                                     {...formik.getFieldProps("password")}
                                   />
                                   <div className="invalid-feedback">
@@ -127,27 +122,9 @@ const Login = () => {
                               </div>
                             </div>
 
-                            <div
-                              className="text-success  "
-                              style={{ cursor: "pointer" }}
-                              onClick={() => navigate("/auth/register")}
-                            >
-                              Don't have TGE account Let's Signup !
-                            </div>
-                            <div
-                              className="text-success mt-3  "
-                              style={{ cursor: "pointer" }}
-                              onClick={() => navigate("/auth/forget")}
-                            >
-                              Forget Password{" "}
-                            </div>
-                            <div className="btn-wrap justify-content-between mt-20">
-                              <button
-                                type="submit"
-                                className="btn style4"
-                                disabled={Post.isLoading}
-                              >
-                                Login
+                            <div className="btn-wrap justify-content-start mt-20">
+                              <button type="submit" className="btn style4">
+                                next
                               </button>
                             </div>
                           </form>
@@ -165,4 +142,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Form4;

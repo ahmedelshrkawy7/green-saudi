@@ -7,7 +7,11 @@ import { useNavigate } from "react-router-dom";
 
 const Plant = () => {
   const navigate = useNavigate();
-  const formik = useFormik();
+  const formik = useFormik({
+    initialValues:{
+      
+    }
+  });
 
   const Post = useMutation(postData, {
     onSuccess: (e) => {

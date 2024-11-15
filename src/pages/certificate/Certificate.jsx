@@ -1,17 +1,14 @@
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { getData, postData } from "../../utils/fetchApi";
 import { Form, Formik, useFormik } from "formik";
-import BeneficiaryForm from "./BeneficiaryForm";
-import PlanterForm from "./PlanterForm";
-import SupplierForm from "./SupplierForm";
+
 import { useState } from "react";
 import * as Yup from "yup";
 import { notifySuccess, notifyError } from "../notifications/notify";
-import Otp from "./otp/Otp";
 import { useNavigate } from "react-router-dom";
-import Loginheader from "./Loginheader";
+import Loginheader from "../Auth/Loginheader";
 
-const Login = () => {
+const Certificate = () => {
   const [type, setType] = useState(0);
   // const queryClient = useQueryClient();
   const navigate = useNavigate();
@@ -39,11 +36,10 @@ const Login = () => {
     onSuccess: (e) => {
       notifySuccess("Login in successfully ! ");
       // setKey(e?.data?.data.key);
-      // navigate("/otp", {
-      //   state: e?.data?.data.key,
-      //   email: formik.values.email,
-      // });
-      navigate("/plant/certificate");
+      navigate("/otp", {
+        state: e?.data?.data.key,
+        email: formik.values.email,
+      });
     },
     onError: ({ message }) => {
       notifyError(message);
@@ -62,7 +58,7 @@ const Login = () => {
 
   return (
     <div>
-      <Loginheader title="Login" />
+      <Loginheader title="Certificate" />
 
       {/* <!--==============================
   Donation Details 02  
@@ -84,70 +80,34 @@ const Login = () => {
                             <div className="row mt-4">
                               <div className="col-lg-12">
                                 <div className="form-group">
-                                  <label>Email *</label>
+                                  <label>Name On Certificate</label>
                                   <input
-                                    type="email"
-                                    className={`form-control style-border ${
-                                      formik.touched.email &&
-                                      formik.errors.email &&
-                                      "is-invalid"
-                                    }`}
-                                    name="email"
-                                    id="email1"
-                                    placeholder="Email Address"
-                                    {...formik.getFieldProps("email")}
-                                  />
-                                  <div className="invalid-feedback">
-                                    {formik.touched.email &&
-                                      formik.errors.email}
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div className="col-lg-12">
-                                <div className="form-group">
-                                  <label>Password</label>
-                                  <input
-                                    type="password"
+                                    type="text"
                                     className={`form-control style-border ${
                                       formik.touched.password &&
                                       formik.errors.password &&
                                       "is-invalid"
                                     }`}
-                                    name="password"
+                                    name="certificate"
                                     id="lname1"
-                                    placeholder="Password"
-                                    {...formik.getFieldProps("password")}
+                                    placeholder="Name On Certificate"
+                                    {...formik.getFieldProps("certificate")}
                                   />
                                   <div className="invalid-feedback">
-                                    {formik.touched.password &&
-                                      formik.errors.password}
+                                    {formik.touched.certificate &&
+                                      formik.errors.certificate}
                                   </div>
                                 </div>
                               </div>
                             </div>
 
-                            <div
-                              className="text-success  "
-                              style={{ cursor: "pointer" }}
-                              onClick={() => navigate("/auth/register")}
-                            >
-                              Don't have TGE account Let's Signup !
-                            </div>
-                            <div
-                              className="text-success mt-3  "
-                              style={{ cursor: "pointer" }}
-                              onClick={() => navigate("/auth/forget")}
-                            >
-                              Forget Password{" "}
-                            </div>
                             <div className="btn-wrap justify-content-between mt-20">
                               <button
                                 type="submit"
                                 className="btn style4"
                                 disabled={Post.isLoading}
                               >
-                                Login
+                                Save
                               </button>
                             </div>
                           </form>
@@ -165,4 +125,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Certificate;

@@ -11,6 +11,7 @@ import SubmitBtn from "../../components/SubmitBtn";
 import Factory from "./offset-types/Factory";
 import Individual from "./offset-types/Individual";
 import SME from "./offset-types/SME";
+import { useNavigate } from "react-router-dom";
 const Offset = () => {
   const [type, setType] = useState(0);
   const validationSchema = {};
@@ -19,9 +20,13 @@ const Offset = () => {
     getData("/user/types")
   );
 
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {},
-    onSubmit: () => {},
+    onSubmit: () => {
+      navigate("/offsetstatistics");
+    },
   });
 
   return (
@@ -46,13 +51,14 @@ const Offset = () => {
                       validationSchema={validationSchema}
                       onSubmit={(values) => {
                         Post.mutate(["/user/register", values]);
+                        navigate("/offsetstatistics");
                       }}
                     >
                       <div className="donation-form m-0  ">
                         <div className="row">
                           <div className="col-12 ">
                             <ul
-                              className="nav nav-pills justify-content-between mb-5"
+                              className="nav nav-pills  mb-5 w-100"
                               // id="pills-tab"
                               // role="tablist"
                             >
@@ -72,22 +78,15 @@ const Offset = () => {
                               ].map((typ, id) => {
                                 return (
                                   <li
-                                    className="nav-item d-flex align-items-center gap-3"
+                                    className={`nav-item d-flex align-items-center gap-3  ${
+                                      type == id && "active"
+                                    } `}
                                     role="presentation"
                                     key={typ.id}
                                   >
                                     {typ.icon}
                                     <button
-                                      className={`nav-link mt-2  ${
-                                        type == id && "active"
-                                      } `}
-                                      // id="pills-home-tab"
-                                      // data-bs-toggle="pill"
-                                      // data-bs-target="#pills-home"
-                                      // type="button"
-                                      // role="tab"
-                                      // aria-controls="pills-home"
-                                      // aria-selected="true"
+                                      className={`nav-link   `}
                                       onClick={() => {
                                         setType(id);
                                       }}
